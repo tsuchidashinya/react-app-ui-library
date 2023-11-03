@@ -14,6 +14,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prebuild": "rimraf dist",
     "storybook": "storybook dev -p 6006",
+    "typegen:scss": "typed-scss-modules src",
     "typegen:scss-watch": "typed-scss-modules src --watch",
     "build-storybook": "storybook build",
     "fmt": "pretter --write src/**/*.{ts,tsx}",

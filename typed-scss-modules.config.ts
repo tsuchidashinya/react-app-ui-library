@@ -1,5 +1,5 @@
 export const config = {
-  export: 'default',
+  exportType: 'default',
   nameFormat: 'none',
   implementation: 'sass',
   ignore: ['**/utils/**'],
