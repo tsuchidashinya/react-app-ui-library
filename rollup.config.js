@@ -9,7 +9,7 @@ import postcss from 'rollup-plugin-postcss'
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))
 
 export default {
-  input: './src/index.js',
+  input: './src/index.ts',
   output: {
     name: pkg.name,
     sourcemap: false,
