@@ -1,6 +1,5 @@
 {
   "name": "react-app-ui-library",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "dist/index.js",
@@ -13,6 +12,7 @@
     "dev": "run-p storybook typegen:scss-watch",
     "build": "rollup -c",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "prebuild": "rimraf dist",
     "storybook": "storybook dev -p 6006",
     "typegen:scss-watch": "typed-scss-modules src --watch",
     "build-storybook": "storybook build",
@@ -26,8 +26,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^4.2.0",
-    "yarn": "^1.22.19"
+    "storybook-addon-react-router-v6": "^2.0.9"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
@@ -38,7 +37,6 @@
     "@storybook/addon-essentials": "^7.5.2",
     "@storybook/addon-interactions": "^7.5.2",
     "@storybook/addon-links": "^7.5.2",
-    "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/blocks": "^7.5.2",
     "@storybook/react": "^7.5.2",
     "@storybook/react-vite": "^7.5.2",
@@ -56,9 +54,14 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-storybook": "^0.6.15",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
+    "modern-normalize": "^2.0.0",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.31",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.2.0",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.69.5",
     "storybook": "^7.5.2",
@@ -70,8 +73,11 @@
     "react": "^18.2.0",
     "react-dom": "18.2.0"
   },
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  },
   "lint-staged": {
-    "*.{js,jsx.ts,tsx}": [
+    "src/**/*.{js,jsx.ts,tsx}": [
       "yarn fmt",
       "yarn lint"
     ]

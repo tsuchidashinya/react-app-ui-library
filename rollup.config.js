@@ -18,7 +18,7 @@ export default {
     preserveModulesRoot: 'src',
     globals: { react: 'React' },
   },
-  plugin: [
+  plugins: [
     resolve({ moduleDirectories: ['node_modules'] }),
     postcss({
       minimize: true,
