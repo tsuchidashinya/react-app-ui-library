@@ -19,6 +19,7 @@ export default {
     globals: { react: 'React' },
   },
   plugins: [
+    commonjs(),
     resolve({ moduleDirectories: ['node_modules'] }),
     postcss({
       minimize: true,
@@ -32,7 +33,6 @@ export default {
       exclude: 'node_modules/**',
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
     }),
-    commonjs(),
     typescript({
       exclude: ['**/*.stories.tsx'],
     }),
