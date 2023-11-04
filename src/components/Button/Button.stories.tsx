@@ -1,17 +1,17 @@
-import { Button } from './Button'
 import React from 'react'
+import { Button } from './Button'
 
 export default {
   title: 'Button/Button',
   component: Button,
-  args: {},
+  args: { label: 'tsuchida' },
 }
 
-export const All = () => {
+export const All = ({ ...args }) => {
   return (
     <>
       <div style={buttonWrapStyle}>
-        <Button label={'tsuchida'} backgroundColor={'red'} />
+        <Button label={args.label} primary={args.primary} backgroundColor={args.backgroundColor} />
       </div>
     </>
   )
