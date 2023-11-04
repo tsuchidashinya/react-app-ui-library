@@ -1,4 +1,5 @@
 export type Styles = {
+  disabled: string
   'text-input': string
 }
 

@@ -9,17 +9,7 @@ export const All = ({ ...args }: TextInputProps) => {
   return (
     <>
       <div style={componentStyle}>
-        <TextInput value={args.value} onChange={args.onChange} />
-      </div>
-    </>
-  )
-}
-
-export const Single = ({ ...args }: TextInputProps) => {
-  return (
-    <>
-      <div style={componentStyle}>
-        <TextInput {...args} />
+        <TextInput value={args.value} disabled={args.disabled} onChange={args.onChange} />
       </div>
     </>
   )
