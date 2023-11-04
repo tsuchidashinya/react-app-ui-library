@@ -1,14 +1,15 @@
+import clsx from 'clsx'
 import styles from './Button.module.scss'
 
-interface ButtonProps {
+export type ButtonProps = {
   /**
    * Is this the principal call to action on the page?
    */
-  primary?: boolean
+  variant?: 'secondary' | 'primary'
   /**
    * What background color to use
    */
-  backgroundColor?: string
+  color?: 'blue' | 'red' | 'gray' | 'green'
   /**
    * How large should the button be?
    */
@@ -27,19 +28,22 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
-  primary = false,
+  variant = 'secondary',
   size = 'medium',
-  backgroundColor,
+  color = 'blue',
   label,
-  ...props
+  onClick = undefined,
 }: ButtonProps) => {
-  const mode = primary ? styles['storybook-button-primary'] : styles['storybook-button-secondary']
   return (
     <button
       type='button'
-      className={[styles['storybook-button'], styles[`storybook-button-${size}`], mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
+      className={clsx([
+        styles.button,
+        styles[`button-${variant}`],
+        styles[`button-${variant}-${color}`],
+        styles[`button-${size}`],
+      ])}
+      onClick={() => onClick()}
     >
       {label}
     </button>

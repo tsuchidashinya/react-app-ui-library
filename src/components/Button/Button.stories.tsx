@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from './Button'
+import { Button, ButtonProps } from './Button'
 
 export default {
   title: 'Button/Button',
@@ -7,21 +7,17 @@ export default {
   args: { label: 'tsuchida' },
 }
 
-export const All = ({ ...args }) => {
+export const All = ({ ...args }: ButtonProps) => {
   return (
     <>
       <div style={buttonWrapStyle}>
-        <Button label={args.label} primary={args.primary} backgroundColor={args.backgroundColor} />
-      </div>
-    </>
-  )
-}
-
-export const Single = () => {
-  return (
-    <>
-      <div style={buttonWrapStyle}>
-        <Button label={'tsuchida'} backgroundColor={'blue'} />
+        <Button
+          label={args.label}
+          variant={args.variant}
+          color={args.color}
+          size={args.size}
+          onClick={args.onClick}
+        />
       </div>
     </>
   )
