@@ -1,0 +1,9 @@
+@use 'default_color_values' as *;
+
+:root {
+  --color-primary-700: #{$lit-color-primary-700};
+  --color-grayscale-700: #{$lit-color-grayscale-700};
+  --color-grayscale-800: #{$lit-color-grayscale-800};
+  --color-text-800: #{$lit-color-text-800};
+  --color-text-600: #{$lit-color-text-600};
+}
